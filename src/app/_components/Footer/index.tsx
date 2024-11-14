@@ -6,16 +6,15 @@ const Footer = () => {
   return (
     <Container
       color="inherit"
-      maxWidth="xl"
       sx={{
         top: "auto",
         bottom: 0,
         height: "15%",
-        width: "100%",
         bgcolor: "primary.main",
         color: "white",
         p: 2
-      }}>
+      }}
+      maxWidth={false}>
       <Grid container spacing={2} justifyContent="space-between" m={3}>
         <Grid size={4} className="footer-left">
           <Typography variant="h5" gutterBottom>
