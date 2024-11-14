@@ -1,95 +1,51 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import React from "react";
+import PageTemplate from "./_components/PageTemplate";
+import MixersDisplay from "./_components/MixersDisplay";
+import { Container, Typography } from "@mui/material";
+import LandingMenu from "./_components/LandingMenu";
 
-export default function Home() {
+export const Home = () => {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
+    <div>
+      <main>
+        <PageTemplate title="Carter Mixers">
+          <Container
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: 8,
+              p: 4
+            }}>
+            <section id="landing-menu">
+              <LandingMenu />
+            </section>
+            <section id="about-us">
+              <Container sx={{ display: "flex", flexDirection: "column", gap: 4, p: 4 }}>
+                <Typography variant="h1">About Us</Typography>
+                <p>
+                  Carter of Rochdale is the name that embodies the ultimate quality in rubber and
+                  plastics engineering throughout the world. An acute understanding of customer
+                  requirements and the ever changing trends of market forces have established Carter
+                  at the forefront of the industry. A sensible business philosophy committed to long
+                  term research and development, together with enormous investment in both people
+                  and the most technically advanced machinery ensures a continuing policy of service
+                  and quality assurance that customers can really depend on. Situated in the heart
+                  of the North West of England (just off the M62 motorway) you can easily visit
+                  Carter by air, road or rail through an accessible network of travel links.
+                </p>
+              </Container>
+            </section>
+            <section id="mixers">
+              <Container sx={{ display: "flex", flexDirection: "column", gap: 4, p: 4 }}>
+                <Typography variant="h1">View our Mixers</Typography>
+                <MixersDisplay />
+              </Container>
+            </section>
+          </Container>
+        </PageTemplate>
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
-}
+};
+
+export default Home;
